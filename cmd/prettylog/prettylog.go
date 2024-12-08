@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rs/zerolog"
+	"github.com/instockcom/zerolog"
 )
 
 var timeFormats map[string]string = map[string]string{
