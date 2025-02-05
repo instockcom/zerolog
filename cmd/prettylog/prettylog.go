@@ -49,6 +49,7 @@ func isInputFromPipe() bool {
 
 func processInput(reader io.Reader, writer io.Writer) error {
 	scanner := bufio.NewScanner(reader)
+	scanner.Buffer(make([]byte, 0, 1024*1024), 64*1024*1024)
 	for scanner.Scan() {
 		bytesToWrite := scanner.Bytes()
 		_, err := writer.Write(bytesToWrite)
